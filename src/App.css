@@ -113,6 +113,33 @@ input[type=text]:focus {
   }
 }
 
+@media (max-width: 1920px) {
+  .wrapper-holder {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .firstName {
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  
+  .lastName {
+    font-size: 18px;
+  }
+
+  .img {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #282c3457;
+    margin-right: 20px;
+  }
+
+  .content {
+    font-size: 12px;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
