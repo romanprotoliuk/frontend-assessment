@@ -78,6 +78,17 @@ input[type=text]:focus {
   padding: 10px 0px 10px 10px;
 }
 
+#tag {
+  width: 60%;
+  padding: 0px 0px 6px 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+.tag-form {
+  margin-top: 10px;
+}
+
 .holder {
   height: 80%;
 }
@@ -122,7 +133,7 @@ input[type=text]:focus {
 }
 
 .last-average {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .test-grade {

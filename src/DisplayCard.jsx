@@ -1,13 +1,32 @@
 import ScoreList from "./ScoreList"
 import { useState } from "react"
 
-const DisplayCard = ({ student, i, helperFuncAverage }) => {
+const DisplayCard = ({ student, i, helperFuncAverage, tag, setTag }) => {
 
   const [open, setOpen] = useState(false)
 
   const handleOnClick = () => {
     setOpen(!open)
+  }
 
+  const handleClick = (e) => {
+    e.stopPropagation()
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+  
+
+    // if (e.keyCode === 13) {
+    //   console.log('submitted')
+    // }
+  }
+
+  const handleTextChange = (e) => {
+    const updatedInput = { [e.target.name]: e.target.value }
+    console.log(updatedInput)
+    console.log(e)
   }
 
   return (
@@ -30,6 +49,22 @@ const DisplayCard = ({ student, i, helperFuncAverage }) => {
                 <p className='content last-average'>average: {helperFuncAverage(student.grades)}%</p>
                 <div className="test-scores">
                   { open ? <ScoreList grades={student.grades} /> : ''}
+                </div>
+                <div className='search-wrapper-inside'>
+                  <form className="tag-form" onSubmit={handleSubmit}>
+                    <label htmlFor="student-search"></label>
+                    <input
+                      id='tag'
+                      type="text"
+                      name="tag"
+                      // value={tag.tag}
+                      placeholder="Add a tag"  
+                      onClick={handleClick}
+                      onChange={handleTextChange}
+                      // value={search}
+                      // onChange={handleChange}
+                    />
+                  </form>
                 </div>
               </div>
             </div>

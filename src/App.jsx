@@ -7,6 +7,9 @@ import ScoreList from './ScoreList';
 const App = () => {
 
   const [studentsData, setStudentsData] = useState([])
+  const [tag, setTag] = useState({
+    tag: []
+  })
   const [search, setSearch] = useState("")
 
   const fetchData = () => {
@@ -43,7 +46,7 @@ const App = () => {
   const studentData = getFilteredStudents()
 
   const eachStudent = studentData.map((student, i) => {
-    return <DisplayCard student={student} i={i} helperFuncAverage={helperFuncAverage} /> 
+    return <DisplayCard student={student} i={i} helperFuncAverage={helperFuncAverage} tag={tag} setTag={setTag}/> 
   })
 
   return (
@@ -55,6 +58,16 @@ const App = () => {
             id='student-search'
             type="text"
             placeholder="Search by name"  
+            value={search}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='search-wrapper'>
+          <label htmlFor="student-search"></label>
+          <input
+            id='student-search'
+            type="text"
+            placeholder="Search by tag"  
             value={search}
             onChange={handleChange}
           />
