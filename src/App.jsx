@@ -2,6 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import DisplayCard from './DisplayCard';
+import ScoreList from './ScoreList';
 
 const App = () => {
 
@@ -30,8 +31,6 @@ const App = () => {
     console.log(search)
   }
 
-  console.log('no object', studentsData)
-
   const getFilteredStudents = (e) => {
     let searchTerm = search.toLowerCase()
     return studentsData.filter(s => {
@@ -44,7 +43,7 @@ const App = () => {
   const studentData = getFilteredStudents()
 
   const eachStudent = studentData.map((student, i) => {
-    return <DisplayCard student={student} i={i} helperFuncAverage={helperFuncAverage} />
+    return <DisplayCard student={student} i={i} helperFuncAverage={helperFuncAverage} /> 
   })
 
   return (

@@ -15,8 +15,9 @@
 }
 
 .fullname-inline {
-  display: flex;
+  /* display: flex; */
   padding-bottom: 7px;
+ 
 }
 
 .firstName {
@@ -79,20 +80,29 @@ input[type=text]:focus {
 
 .holder {
   height: 80%;
-  
 }
 
 .wrapper-student {
-  /* width: 50vw; */
+  /* width: 100%; */
   padding: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  /* background-color: white; */
   border-bottom: .5px solid #282c3425;
+}
+
+.img-and-name {
+  display: flex;
+}
+
+.name-inline {
+  display: flex;
 }
 
 .wrapper-inner-content {
   padding-left: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .img {
@@ -107,13 +117,79 @@ input[type=text]:focus {
   padding: 2px 0px;
 }
 
+.grade-wrapper {
+  display: flex; 
+}
+
+.last-average {
+  margin-bottom: 15px;
+}
+
+.test-grade {
+  padding-right: 15px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.grade-percent {
+  font-family: 'Raleway', sans-serif;
+}
+
+.line-vertical {
+  position: absolute;
+  height: 35px;
+  width: 7px;
+  border-radius: 10px;
+  background-color: #9e9e9e;
+}
+
+.line-horizontal {
+  height: 7px;
+  width: 35px;
+  border-radius: 10px;
+  background-color: #9e9e9e;
+}
+
+/* .line-vertical:hover {
+  background-color: black;
+}
+
+.line-horizontal:hover {
+  background-color: black;
+} */
+
+.open-wrapper {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.open-wrapper:hover > div {
+  background-color: black;
+}
+
+
+.outter-wrapper {
+  width: 100%;
+}
+
+.fullname-inline {
+  width: 100%;
+}
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 400px) {
   .wrapper-holder {
     width: 90%;
     margin: 0 auto;
@@ -121,7 +197,7 @@ input[type=text]:focus {
 
   .firstName {
     font-size: 18px;
-    padding-right: 10px;
+    padding-right: 7px;
   }
   
   .lastName {
