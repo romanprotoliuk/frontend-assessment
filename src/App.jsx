@@ -50,17 +50,21 @@ const App = () => {
   return (
     <div className='most-outter-wrapper'>
       <div className='wrapper-holder'>
-      <div className='search-wrapper'>
-        <label htmlFor="student-search"></label>
-        <input
-          id='student-search'
-          type="text"
-          placeholder="Search"  
-          value={search}
-          onChange={handleChange}
-        />
-      </div>
-        {eachStudent}
+        <div className='search-wrapper'>
+          <label htmlFor="student-search"></label>
+          <input
+            id='student-search'
+            type="text"
+            placeholder="Search by name"  
+            value={search}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* apply css to this student card */}
+        <div className='student-card-wrapper'>
+          {eachStudent}
+        </div>
       </div>
     </div>
   );

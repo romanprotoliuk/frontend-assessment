@@ -42,19 +42,40 @@
 }
 
 .wrapper-holder {
-  height: 80vh;
-  overflow-y: scroll;
   width: 60%;
   margin: 0 auto;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
-/* .outter-wrapper {
-  display: flex;
-  justify-content: center;
-  background-color: #efefef;
-} */
+.student-card-wrapper {
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.search-wrapper {
+  padding: 10px 20px 0px 10px;
+}
+
+input[type=text] {
+  width: 99%;
+  font-size: 20px;
+  /* padding: 10px 20px; */
+  font-family: 'Raleway', sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: .5px solid #282c3425;
+}
+
+input[type=text]:focus {
+  outline: none;
+  border-bottom: .5px solid #282c34;
+}
+
+#student-search {
+  padding: 10px 0px 10px 10px;
+}
 
 .holder {
   height: 80%;
