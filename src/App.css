@@ -50,7 +50,7 @@
 }
 
 .student-card-wrapper {
-  height: 80vh;
+  height: 70vh;
   overflow-y: scroll;
 }
 
@@ -80,7 +80,7 @@ input[type=text]:focus {
 
 #tag {
   width: 60%;
-  padding: 0px 0px 6px 0px;
+  padding: 0px 0px 6px 6px;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
 }
@@ -191,8 +191,25 @@ input[type=text]:focus {
   width: 100%;
 }
 
+.tag-wrapper {
+  display: flex;
+  max-width: 400px;
+}
 
+.tag-box {
+  padding: 12px 10px;
+  margin: 10px 5px 10px 0px;
+  background-color: #dcdcdc;
+  border-radius: 5px;
+}
 
+.hide-btn {
+  display: none;
+}
+
+.test-scores {
+  margin-bottom: 10px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

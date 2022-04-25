@@ -1,9 +1,10 @@
 import ScoreList from "./ScoreList"
 import { useState } from "react"
 
-const DisplayCard = ({ student, i, helperFuncAverage, tag, setTag }) => {
+const DisplayCard = ({ student, i, helperFuncAverage, addTag }) => {
 
   const [open, setOpen] = useState(false)
+  const [newTag, setNewTag] = useState("");
 
   const handleOnClick = () => {
     setOpen(!open)
@@ -15,19 +16,13 @@ const DisplayCard = ({ student, i, helperFuncAverage, tag, setTag }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-  
-
-    // if (e.keyCode === 13) {
-    //   console.log('submitted')
-    // }
+   
   }
 
-  const handleTextChange = (e) => {
-    const updatedInput = { [e.target.name]: e.target.value }
-    console.log(updatedInput)
-    console.log(e)
-  }
+  const showTags = student.tags.map((tag, i) => {
+    return <p key={i} className="content tag-box">{tag}</p>
+  })
+
 
   return (
     <>
@@ -50,21 +45,29 @@ const DisplayCard = ({ student, i, helperFuncAverage, tag, setTag }) => {
                 <div className="test-scores">
                   { open ? <ScoreList grades={student.grades} /> : ''}
                 </div>
+                <div className="tag-wrapper">
+                  {showTags}
+                </div>
                 <div className='search-wrapper-inside'>
-                  <form className="tag-form" onSubmit={handleSubmit}>
-                    <label htmlFor="student-search"></label>
-                    <input
-                      id='tag'
-                      type="text"
-                      name="tag"
-                      // value={tag.tag}
-                      placeholder="Add a tag"  
-                      onClick={handleClick}
-                      onChange={handleTextChange}
-                      // value={search}
-                      // onChange={handleChange}
+                  <form
+                      onSubmit={e => {
+                        e.preventDefault();
+                        addTag(newTag, i);
+                        setNewTag("");
+                      }}
+                    >
+                      <input
+                        id='tag'
+                        placeholder="Add a tag"
+                        type="text"
+                        value={newTag}
+                        onClick={handleClick}
+                        onChange={e => {
+                          setNewTag(e.target.value);
+                        }}
                     />
-                  </form>
+                    <input className="hide-btn" type="submit" onClick={handleClick} />
+                  </form>          
                 </div>
               </div>
             </div>
